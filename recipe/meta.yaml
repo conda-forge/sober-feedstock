@@ -1,5 +1,5 @@
 {% set name = "sober" %}
-{% set version = "0.1.2" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sober-{{ version }}.tar.gz
-  sha256: 6165c14528ba78cdd555d25b1cd306ecd880ee2494ce1406ebb5135d82108dbb
+  sha256: 4286b2ed3e102ca27e7e575cfe3ba72cb57bedd18250bd3be3a0465540337d3d
 
 build:
   noarch: python
