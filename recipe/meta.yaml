@@ -1,5 +1,5 @@
 {% set name = "sober" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sober-{{ version }}.tar.gz
-  sha256: b3f1ea47e480c6f01f228b9bbca3906e7c2546a695f2620989ee6be87857667a
+  sha256: e48778755914eadcbda21a390ca33aea6c1f2a36eedabd01eeecb99019017817
 
 build:
   noarch: python
@@ -16,9 +16,9 @@ build:
 
 requirements:
   host:
-    - python >=3.12,<4.0
-    - poetry-core
+    - hatchling
     - pip
+    - python >=3.12,<4.0
   run:
     - python >=3.12.0,<4.0.0
     - pymoo >=0.6.1,<0.7.0
