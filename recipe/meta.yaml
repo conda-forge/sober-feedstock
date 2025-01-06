@@ -1,4 +1,5 @@
 {% set name = "sober" %}
+{% set python_min = '3.12.0' %}
 {% set version = "0.2.2" %}
 
 package:
@@ -12,22 +13,24 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
     - hatchling
     - pip
-    - python >=3.12,<4.0
+    - python {{ python_min }}
   run:
-    - python >=3.12.0,<4.0.0
-    - pymoo >=0.6.1,<0.7.0
+    - python >={{ python_min }}
     - eppy-core >=0.5.63,<0.6.0
-    - numpy >=2.0.0,<3.0.0
-    - scipy >=1.13.0,<2.0.0
-    - psutil >=6.0.0,<7.0.0
+    - numpy ==2.*
+    - psutil ==6.*
+    - pymoo >=0.6.1,<0.7.0
+    - scipy >=1.13,<2.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - sober
 
