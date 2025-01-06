@@ -1,5 +1,5 @@
-{% set python_min = '3.12.0' %}
 {% set name = "sober" %}
+{% set python_min = '3.12.0' %}
 {% set version = "0.2.2" %}
 
 package:
@@ -22,11 +22,11 @@ requirements:
     - python {{ python_min }}
   run:
     - python >={{ python_min }}
-    - pymoo >=0.6.1,<0.7.0
     - eppy-core >=0.5.63,<0.6.0
     - numpy ==2.*
-    - scipy >=1.13,<2.0
     - psutil ==6.*
+    - pymoo >=0.6.1,<0.7.0
+    - scipy >=1.13,<2.0
 
 test:
   requires:
