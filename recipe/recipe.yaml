@@ -6,15 +6,15 @@ context:
   version: 0.4.0
 
 package:
-  name: ${{ name|lower }}
+  name: ${{ name }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/sober-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
   sha256: 806b869af980cddad78094560bdac14041d7e413bca6eb819ec3e807c29e39a6
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
